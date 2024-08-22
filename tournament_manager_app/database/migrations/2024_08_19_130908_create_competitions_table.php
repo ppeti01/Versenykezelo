@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->year('year');
-            $table->json('languages')->nullable();
-            $table->unsignedInteger('correct_points')->default(10);
-            $table->Integer('incorrect_points')->default(-5);
-            $table->unsignedInteger('empty_points')->default(0);
-            $table->string('winner')->default('NaN');
+            $table->json('languages');
+            $table->unsignedInteger('correct')->default(10);
+            $table->Integer('incorrect')->default(-5);
+            $table->unsignedInteger('empty')->default(0);
             $table->timestamps();
 
             $table->unique(['name', 'year']);
